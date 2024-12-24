@@ -23,7 +23,7 @@ import PlaceOrder from "./components/user/PlaceOrder";
 import Profile from "./components/user/Profile";
 import TrackOrder from "./components/user/TrackOrder";
 import Support from "./components/user/Support";
-axios.defaults.baseURL = "http://localhost:5000"
+axios.defaults.baseURL = "https://e-com-backend-65l1.onrender.com"
 axios.defaults.withCredentials = true
 const App = () => {
   return (
