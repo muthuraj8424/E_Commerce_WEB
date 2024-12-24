@@ -11,6 +11,7 @@ function Home() {
 
   useEffect(() => {
     const getDetails = async () => {
+      if(userId){
       try {
         // Fetch profile data
         const profileResponse = await axios.get(`/api/auth/getProfile/${userId}`);
@@ -23,6 +24,7 @@ function Home() {
       } catch (err) {
         setError("Failed to load data. Please try again later.");
         console.error("Error fetching data:", err);
+      }
       }
     };
 
