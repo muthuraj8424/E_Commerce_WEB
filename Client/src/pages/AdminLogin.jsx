@@ -29,7 +29,7 @@ const AdminLogin = () => {
 
       alert(response.data.message);
       navigate("/admin/Dashboard");
-      window.location.reload()
+      // window.location.reload()
     } catch (err) {
       console.error("Error:", err.response);
     //   setError(err.response?.data?.message || "Login failed");
