@@ -15,7 +15,7 @@ export const UserProvider = ({ children }) => {
     const fetchUser = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:5000/api/auth/profile",
+          "/api/auth/profile",
           {
             withCredentials: true,
           }
