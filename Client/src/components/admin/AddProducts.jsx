@@ -144,7 +144,7 @@ const AddProducts = () => {
               addedphotos.map((link, index) => (
                 <div key={index} className="flex justify-center w-36 h-36 mb-2">
                   <img
-                    src={`http://localhost:5000${link}`}
+                    src={`https://e-com-backend-65l1.onrender.com${link}`}
                     alt="Product"
                     className="w-full h-full object-cover rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
                   />
