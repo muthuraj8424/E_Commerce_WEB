@@ -152,7 +152,7 @@ router.get('/getProfileOrders/:id', async (req, res) => {
 
 router.post("/logout", (req, res) => {
   // Clear the token cookie by setting it to an empty string with an expired date
-  res.cookie("token", "", { expires: new Date(0), httpOnly: true });
+  res.cookie("token", " ", { expires: new Date(0), httpOnly: true });
 
   // Send response to the client
   res.status(200).json({ message: "Logged out successfully" });
