@@ -131,7 +131,7 @@ import { FaCaravan } from "react-icons/fa";
 import axios from "axios";
 
 const Navbar = () => {
-  const { role } = useContext(UserContext);
+  const { role ,setRole,setId ,setuser} = useContext(UserContext);
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -142,7 +142,9 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       const response = await axios.post("/api/auth/logout");
-
+       setRole(null);
+       setId(null);
+       setuser(null)
       alert(response.data.message);
 
       navigate("/login");
