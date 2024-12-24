@@ -11,7 +11,7 @@ function Home() {
 
   useEffect(() => {
     const getDetails = async () => {
-      if(userId){
+      if(id){
       try {
         // Fetch profile data
         const profileResponse = await axios.get(`/api/auth/getProfile/${userId}`);
