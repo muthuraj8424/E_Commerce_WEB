@@ -115,7 +115,7 @@ function DetailedInfo() {
         {/* Product Image */}
         <div className="sm:w-1/2">
           <img
-            src={`http://localhost:5000${product.photos[0]}`}
+            src={`https://e-com-backend-65l1.onrender.com${product.photos[0]}`}
             alt={product.name}
             className="w-full h-96 object-cover rounded-lg shadow-lg transform transition-all duration-300 hover:scale-105"
           />
