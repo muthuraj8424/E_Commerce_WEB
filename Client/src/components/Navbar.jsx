@@ -145,7 +145,7 @@ const Navbar = () => {
       alert(response.data.message);
 
       navigate("/login");
-      window.location.reload();
+      // window.location.reload();
     } catch (err) {
       console.error("Failed to log out:", err);
     }
