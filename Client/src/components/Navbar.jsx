@@ -26,16 +26,17 @@ const Navbar = () => {
     setIsSidebarOpen((prev) => !prev);
   };
 
-  const handleLogout = async () => {
-    try {
-      const response = await axios.post("/api/auth/logout");
-       navigate("/login")
-      window.location.reload()
-      }
-    } catch (err) {
-      console.error("Failed to log out:", err);
-    }
-  };
+const handleLogout = async () => {
+  try {
+    const response = await axios.post("/api/auth/logout");
+    alert(response.data.message);
+    navigate("/login");
+    localStorage.removeItem('UserId'); 
+  } catch (err) {
+    console.error("Failed to log out:", err);
+  }
+};
+
 
   const adminLinks = [
     { name: "Dashboard", path: "/admin/dashboard", icon: <FaCogs /> },
