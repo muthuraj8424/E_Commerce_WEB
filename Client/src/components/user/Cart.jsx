@@ -19,7 +19,7 @@ function Cart() {
           {cart.map((product) => (
             <div key={product._id} className="border border-gray-300 rounded-lg p-4 shadow-md">
               <img
-                src={`http://localhost:5000${product.photos[0]}`}
+                src={`https://e-com-backend-65l1.onrender.com${product.photos[0]}`}
                 alt={product.name}
                 className="w-full h-40 md:h-48 mb-4 object-cover rounded-lg shadow-md"
               />
