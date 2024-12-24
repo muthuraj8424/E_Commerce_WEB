@@ -15,7 +15,7 @@ const Login = () => {
       console.log(userData.role);
       alert(userData.message)
       navigate("/products");
-      window.location.reload();
+      // window.location.reload();
     } catch (error) {
       console.error("Login failed:", error);
     }
