@@ -152,10 +152,10 @@ router.get('/getProfileOrders/:id', async (req, res) => {
 
 router.post("/logout", (req, res) => {
   res.cookie("token", "", { 
-    expires: new Date(0), 
-    httpOnly: true, 
-    secure: process.env.NODE_ENV === 'production', // Only secure cookies in production
-    sameSite: 'Strict' // Adjust based on your requirements
+        httpOnly: true,
+        secure: true, // Only over HTTPS
+        sameSite: "none", // Allow cross-origin
+        maxAge: 3600000, 
   });
 
   // Send response to the client
