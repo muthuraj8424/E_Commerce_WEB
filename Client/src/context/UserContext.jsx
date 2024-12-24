@@ -54,7 +54,7 @@ export const UserProvider = ({ children }) => {
   // console.log("from useconstem "+id);
 
   return (
-    <UserContext.Provider value={{ name, email, id, role,message }}>
+    <UserContext.Provider value={{ name, email, id, role,message,setRole,setId ,setuser}}>
       {children}
     </UserContext.Provider>
   );
