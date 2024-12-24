@@ -29,13 +29,8 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       const response = await axios.post("/api/auth/logout");
-      if (response.status === 200) {
-        alert(response.data.message);
-        
-        navigate("/login")
-        window.location.reload()
-      } else {
-        console.log("Failed to log out");
+       navigate("/login")
+      window.location.reload()
       }
     } catch (err) {
       console.error("Failed to log out:", err);
