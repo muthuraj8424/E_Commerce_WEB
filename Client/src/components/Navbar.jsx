@@ -33,7 +33,7 @@ const handleLogout = async () => {
    
     localStorage.removeItem('UserId'); 
      navigate("/login");
-    window.location.reload()
+    // window.location.reload()
   } catch (err) {
     console.error("Failed to log out:", err);
   }
