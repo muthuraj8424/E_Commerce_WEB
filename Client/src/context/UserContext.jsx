@@ -50,7 +50,7 @@ export const UserProvider = ({ children }) => {
     };
 
     fetchUser();
-  }, [id]);
+  }, []);
   // console.log("from useconstem "+id);
 
   return (
