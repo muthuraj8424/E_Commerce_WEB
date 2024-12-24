@@ -110,7 +110,6 @@
 
 
 
-
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -131,7 +130,7 @@ import { FaCaravan } from "react-icons/fa";
 import axios from "axios";
 
 const Navbar = () => {
-  const { role ,setRole,setId ,setuser} = useContext(UserContext);
+  const { role } = useContext(UserContext);
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -142,13 +141,11 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       const response = await axios.post("/api/auth/logout");
-       setRole(null);
-       setId(null);
-       setuser(null)
+
       alert(response.data.message);
 
       navigate("/login");
-      // window.location.reload();
+      window.location.reload();
     } catch (err) {
       console.error("Failed to log out:", err);
     }
@@ -173,7 +170,7 @@ const Navbar = () => {
     { name: "Home", path: "/", icon: <FaHome /> },
     { name: "Products", path: "/products", icon: <FaShoppingBag /> },
     { name: "Orders", path: "/user/orders", icon: <AiFillHeart /> },
-    { name: "Cart", path: "/user/cart", icon: <FaCartPlus /> },
+    { name: "CartItems", path: "/user/cart", icon: <FaCartPlus /> },
     // { name: "Profile", path: "/user/profile", icon: <FaUser /> },
     { name: "Support", path: "/user/support", icon: <MdOutlineSupportAgent /> },
     { name: "Track Order", path: "/user/trackOrder", icon: <FaCaravan /> },
