@@ -11,6 +11,7 @@ function PlaceOrder() {
   const [isProceed, setIsProceed] = useState(false);
   const [userDetails, setUserDetails] = useState({ location: '', notes: '' });
   const { role, id } = useContext(UserContext);
+  const [orderId, setorderId] = useState(null)
   const { total } = useCart();
   const userId = localStorage.getItem("UserId");
 
@@ -34,9 +35,13 @@ function PlaceOrder() {
         location: userDetails.location,
         total: total,
       });
-
+      setorderId(response.data?.order._id)
+      console.log(response.data?.order._id);
+      
+      // setorderId(response.data)
       if (response.status === 201) {
         setOrderSuccess(true);
+       
       }
     } catch (error) {
       setError('Failed to place the order');
@@ -49,7 +54,7 @@ function PlaceOrder() {
       <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Place Your Order</h1>
 
       {orderSuccess ? (
-        <div className="text-center text-green-500 font-semibold text-xl">Your order has been placed successfully!</div>
+        <div className="text-center text-green-500 font-semibold text-xl">Your order has been placed successfully! orderId :{orderId}</div>
       ) : error ? (
         <div className="text-center text-red-500 font-semibold text-xl">{error}</div>
       ) : isProceed ? (
